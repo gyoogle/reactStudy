@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+</head>
+<div id="root"></div>
+
+
+<script type="text/babel">
+
+const receiveName = "홍길동";
+const linkUrl = "http://www.naver.com"
+const firstStyle = {
+    textAlign: "center"
+}
+
+const secondStyle = {
+    color: "red"
+}
+
+const displayResult = <div style = {firstStyle}><a href={linkUrl} style={secondStyle}> Hello react {receiveName} </a></div>
+
+const displayResult02 = <A01 textAlign="center" color="red" userName="kim"></A01>
+const displayResult03 = <F01 userName="데미안" color="blue"></F01>
+
+//ReactDOM.render(displayResult, root)
+ReactDOM.render(displayResult03, root)
+
+
+function F01 (props) {
+    return <h2 style={{color: props.color}}> Hello react function component {props.userName}</h2>
+}
+
+function A01 (props) {
+    return <h3 style={{textAlign: props.textAlign}}> Hello react </h3>
+}
+
+</script>
+
+</html>

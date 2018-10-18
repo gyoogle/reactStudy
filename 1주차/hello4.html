@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+</head>
+<div id="root"></div>
+
+
+<script type="text/babel">
+
+class HelloWorld extends React.Component {
+ render() {
+   return (
+   <div>
+     <h1> hello React with Class !! </h1>
+     <a style={{color: this.props.color}} > 리액트사이트연결 </a>
+   </div>
+   )
+ }
+}
+
+const displayResult04 = <HelloWorld color="green" linkUrl = "www.naver.com" />
+
+ReactDOM.render(displayResult04, root)
+
+</script>
+
+</html>

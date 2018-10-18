@@ -1,0 +1,23 @@
+<html>
+
+<head></head>
+
+<div id="root"></div>
+
+
+<script type="text/javascript">
+
+setInterval( () => {
+
+    const date = new Date()
+    const hour = date.getHours()
+    const min = date.getMinutes()
+    const sec = date.getSeconds()
+
+    root.innerHTML = `<h1> ${hour} : ${min} : ${sec} </h1>`
+
+}, 1000)
+
+</script>
+
+</html>
