@@ -4,6 +4,7 @@ import logo from './logo.svg'
 import {performPlus, displaySymbol} from './compo_test'
 import perform from './compo_test'
 import {user, printFullName} from './compo_test'
+import App from './App'
 
 //React 임포트한걸로 JSX를 실행
 const displayResult = <h1>Hello React 개발환경 !!!</h1>
@@ -24,4 +25,5 @@ ReactDOM.render(displayPlus, document.getElementById('plus'))
 ReactDOM.render(displaySym, document.getElementById('symbol'))
 ReactDOM.render(displayMinus, document.getElementById('minus'))
 ReactDOM.render(printFull, document.getElementById('fullname'))
+ReactDOM.render(<App />, document.getElementById('app'))
 

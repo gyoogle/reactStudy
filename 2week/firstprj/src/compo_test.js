@@ -41,3 +41,12 @@ console.log(person.name, person.gender);
 
 var key1 = 'name', key2 = 'gender';
 console.log(person[key1], person[key2]);
+
+var object = { 
+    a: 1,
+    b: 2
+ };
+
+for(var key in object) {
+    console.log( key + '=>' + object[key] );
+}
