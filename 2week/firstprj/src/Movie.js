@@ -1,57 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-class Movie extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Hello Movie!</h1>
-                <MovieTitle/>
-                <MoviePoster/>
-                <MovieActors/>
-                <MovieStory/>
-            </div>
-        )
-    }
-}
+//React 임포트한걸로 JSX를 실행   이미지보이게
+const displayResult = 
+<div>
+ <h1>Movie List.. </h1>
+ <MovieCard movieTitle="FirstMan" mainActor="Ryan Gosling" imgUrl = "http://img.movist.com/?img=/x00/05/06/26_p1.jpg" >
+    On the heels of their six-time Academy Award®-winning smash, La La Land, Oscar®-winning director Damien Chazelle and star Ryan Gosling reteam for Universal Pictures’ First Man, the riveting story behind the first manned mission to the moon, focusing on Neil Armstrong and the decade leading to the historic Apollo 11 flight.
+ </MovieCard>
+</div>
 
-class MovieTitle extends Component {
-    render(){
-        return (
-            <div>
-                <h3>Title : Avengers</h3>
-            </div>
-        )
-    }
-}
+//디스를레이컨텐츠를 virtualDOM에 렌더링
+ReactDOM.render(displayResult, document.getElementById('root') )
 
-class MoviePoster extends Component {
-    render(){
-        return (
-            <img src="https://upload.wikimedia.org/wikipedia/ko/9/92/%EC%96%B4%EB%B2%A4%EC%A0%B8%EC%8A%A4_%EC%9D%B8%ED%94%BC%EB%8B%88%ED%8B%B0_%EC%9B%8C.jpg" alt="value"/>
-        )
-    }
-}
-
-class MovieActors extends Component {
-    render(){
-        return (
-            <div>
-                <h3>Actors</h3>
-                <h5>스티븐 로저스, 토니 스타크</h5>
-            </div>
-        )
-    }
-}
-
-class MovieStory extends Component {
-    render(){
-        return (
-            <div>
-                <h3>Story</h3>
-                <h5>어벤져스들이 지구를 지키는 이야기</h5>
-            </div>
-        )
-    }
-}
-
-export default Movie;
+//무비카드 컴포넌트 정의
+function MovieCard(props) {
+   const movieCardStyle = {
+       border : "1px solid black",
+             margin: 10 ,
+       width: 300,
+       height: 300,
+       float: "left"
+   }
+   return <div>
+   <div style= {movieCardStyle}><img src={props.imgUrl} alt="value" />
+   </div>
+   <div style = {movieCardStyle}>
+       <h3>{props.movieTitle}</h3>
+       <hr/>
+       <span>{props.mainActor}</span>
+       <p>{props.children}</p>
+   </div>
+   </div>
+} 
