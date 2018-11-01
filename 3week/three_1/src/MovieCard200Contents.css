@@ -1,0 +1,20 @@
+.stMovieCardContents1 {
+    background-color:white;
+    width:200px;
+    height:200px;
+    padding:0 20px;
+    margin-top:50px;
+    margin-bottom:50px;
+    box-shadow: 0 8px 38px rgba(133, 133, 133, 0.3), 0 5px 12px rgba(133, 133, 133,0.22);
+ }
+ 
+ .stMovieCardContents2 {
+    background-color:white;
+    width:200px;
+    height:200px;
+    float: left;
+    padding:0 20px;
+    margin-top:50px;
+    margin-bottom:50px;
+    box-shadow: 0 8px 38px rgba(133, 133, 133, 0.3), 0 5px 12px rgba(133, 133, 133,0.22);
+ }
