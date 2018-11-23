@@ -1,44 +1,140 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 4주차(18.11.15)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. 리액트 이벤트
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+   > **이벤트 : **유저가 웹 브라우저에서 DOM요소들과 상호 작용하는 것
+   >
+   > 이벤트 이름은 camelCase로 작성한다. ( ex. onclick이 아니라 onClick)
+   >
+   > DOM 요소에만 이벤트 설정이 가능함 (div, button, input)
+   >
+   > 사용자가 만든 컴포넌트는 props를 전달하게 됨
+   >
+   > <br/>
+   >
+   > - 화살표 함수로 구현한 이벤트
+   >
+   > ```
+   > <input type="text" onChange = {e => {
+   >   alert("리액트 이벤트 연습. 화살표 함수로" + e.target.value);
+   >   }}
+   > />
+   > ```
+   >
+   > <br/>
+   >
+   > - 텍스트 박스를 통해 스테이트 값 디스플레이
+   >   - [코드](https://github.com/kim6394/reactStudy/blob/master/4week/four_1/src/lec03_method.js)
+   >
+   > - input 값이 여러 개인 key를 동적으로 할당
+   >   - [코드](https://github.com/kim6394/reactStudy/blob/master/4week/four_1/src/lec04_multiInput.js)
+   > - 입력 박스에서 keyEvent를 받기
+   >   - [코드](https://github.com/kim6394/reactStudy/blob/master/4week/four_1/src/lec05_keyEvent.js)
 
-### `npm test`
+   <br/>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. 라이프 사이클
 
-### `npm run build`
+   > 리액트 UI 컴포넌트는 3단계로 이루어짐
+   >
+   > 1. 생성 : 마운팅 이벤트
+   >
+   >    > constructor()
+   >    >
+   >    > componentWillMount()
+   >    >
+   >    > render()
+   >    >
+   >    > componentDidMount()
+   >
+   > 2. 갱신 : 속성, 상태 변경
+   >
+   >    > componentWillReceiveProps()
+   >    >
+   >    > shouldComponentUpdate()
+   >    >
+   >    > componentWillUpdate()
+   >    >
+   >    > render()
+   >    >
+   >    > componentDidUpdate()
+   >
+   > 3. 소멸 : 언마운팅 이벤트
+   >
+   >    > componentWillUnmount()
+   >
+   > <br/>
+   >
+   > **라이프사이클 API를 사용하는 경우**
+   >
+   > - 컴포넌트가 처음으로 렌더링할 때 어떤 작업이 필요한 경우
+   >
+   > - 컴포넌트를 업데이트 하기 전후로 어떤 작업이 필요한 경우
+   >
+   > - 불필요한 업데이트를 방지해야 하는 경우
+   >
+   >
+   >
+   > **접두어 Will** : 어떤 작업 **'전'**에
+   >
+   > **접두어 Did** : 어떤 작업 **'후'**에
+   >
+   > <br/>
+   >
+   > **마운트** : DOM이 생성되고 웹브라우저 상에 나타나는 것을 mount
+   >
+   > **constructor()** : 컴포넌트 초기화
+   >
+   > **getDerivedStateFromProps() :** props 값을 state에 동기화
+   >
+   > **render() :** UI에 보여주는 것
+   >
+   > **componentDidMount() :** 컴포넌트가 마운트 된 후에 호출되는 API
+   >
+   > **언마운트** : 컴포넌트를 DOM에서 제거
+   >
+   > <br/>
+   >
+   > props, state가 업데이트, 부모 컴포넌트 리랜더링, forceUpdate로 강제 랜더링될 때 호출
+   >
+   >
+   >
+   > - [라이프사이클 코드](https://github.com/kim6394/reactStudy/blob/master/4week/four_1/src/lec06_lifecycle.js)
+   >
+   >   > 콘솔에 찍어보고 어떻게 작동되는지 확인하기
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   <br/>
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+3. 컴포넌트 간 통신 방법
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   > **컴포넌트의 라이프사이클을 활용한 예제**
+   >
+   > - [스톱워치](https://github.com/kim6394/reactStudy/blob/master/4week/four_1/src/stopwatch.js)
+   > - [inch-cm 변환](https://github.com/kim6394/reactStudy/blob/master/4week/four_1/src/lec07_inchToCm.js)
 
-### `npm run eject`
+   <br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. ESLint
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   > 코드 헬핑 기능
+   >
+   > 잘못된 코드가 있으면 알려주는 기능이다.
+   >
+   > extensions에서 eslint 검색 후 설치 및 리로드하기
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   <br />
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+5. Bootstrap
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+   > 개발 내용이 지저분하면 보기 힘드니 CSS를 만들어서 적용시켜줌
+   >
+   > [관련 사이트](https://www.getbootstrap.com)
+   >
+   >
+   > 해당 스크립트를 public/index.html의 head쪽에 넣는다.
+   >
+   > 값을 적용할 때는 className을 맞게 작성하면 됨
